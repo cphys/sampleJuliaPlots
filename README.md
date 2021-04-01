@@ -71,6 +71,8 @@ contour(x, y, f,fill=true)
 plot!(xlab="x", ylab="y")
 ```
 
+![Vector Plot](output_11_0.png)
+
 ## Plotting the same function using two different methods
 
 ### Plot $\cos{x}\sin{y}$ as a 2d contour plot and an interactive 3d plot
@@ -186,4 +188,4 @@ plot(data,
     zlim = (0, 5))
 ```
 
-![Vector Plot](output_17_0.png)
+![Vector Plot](zeta2d.png)
