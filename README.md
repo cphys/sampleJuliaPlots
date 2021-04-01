@@ -49,7 +49,8 @@ quiver!(repeat(x,nqx), vec(repeat(y',nqy)), quiver=df, c=:blue)
 
 xlims!(-2, 2)
 ylims!(-4, 4)
-plot!(xlab="x", ylab="y")```
+plot!(xlab="x", ylab="y")
+```
 
 ![Vector Plot](output_8_0.png)
 
@@ -119,12 +120,13 @@ Here we switch from using gr() to using plotly. This is to demonstrate plotly's
 This makes them extremely easy to add plots to a website using simple html code
 ```
 
-```<iframe width="100%" height="450px" frameborder="0" scrolling="no" src="/foo/bar/sincos.html"></iframe>```
+```<iframe width="100%" height="450px" frameborder="0" scrolling="no" src="/foo/bar/sincos.html"></iframe>
 ```
 ```
 plotly();
 theme(:dark)
-
+```
+```
 zz = cos.(xx).*sin.(yy);
 plot3d(xx,yy,zz, label=:none, st = :surface)
 plot!(xlab="x", ylab="y", zlab="cos(x)*sin(y)")
