@@ -1,7 +1,5 @@
 # Creating vector plot using Julia
 
-[based on stackoverflow question](https://stackoverflow.com/questions/52360705/how-can-i-plot-vector-field-on-julia)
-
 ## Packages
 
 The [Plots.jl](https://github.com/JuliaPlots/Plots.jl) package will allow us to create plots using various [backends](https://docs.juliaplots.org/latest/backends/#backends)
