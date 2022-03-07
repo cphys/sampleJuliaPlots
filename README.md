@@ -19,7 +19,7 @@ The SpecialFunctions is a package containinng many special mathematical function
 
 ## [Sample plot based on stack exchange question](https://stackoverflow.com/questions/52360705/how-can-i-plot-vector-field-on-julia)
 
-```
+```Julia
 # plotted using gr() backend
 gr(size=(500,500))
 # create sample points along x and y directions
@@ -56,7 +56,7 @@ plot!(xlab="x", ylab="y")
 
 ### We recreate plot plot done in PlotlyJS using gr() to show different approaches
 
-```
+```Julia
 theme(:ggplot2)
 gr(size=(600,400)) 
 # create sample points along x and y directions
@@ -75,7 +75,7 @@ plot!(xlab="x", ylab="y")
 
 ### Plot $\cos{x}\sin{y}$ as a 2d contour plot and an interactive 3d plot
 
-```
+```Julia
 using Plots;
 theme(:dark)
 gr(size=(600,600));
@@ -83,7 +83,7 @@ x=range(-2*pi, stop=2*pi, length=250);
 y=range(-2*pi, stop=2*pi, length=250);
 ```
 
-```
+```Julia
 # create 2 nxn arrays of points to sample from
 xx = reshape([xi for xi in x for yj in y],  length(y), length(x));
 yy = reshape([yj for xi in x for yj in y],  length(y), length(x));
@@ -94,7 +94,7 @@ now pass the sample falues to the funtion
 - Where code written in Python and Matlab will see drastic improvements in speed from vectorizing code. This is not necessary in Julia. This is because Python and Matlab are writen in C so vectorizing code will reduce the amount of time spent passing code to the lower level language. But Julia is written in Julia (similar to how C is written in C) so vectorization is not neccessary.
 - sin.(xx) can be thought of as mapping the sin function onto all of the values in the array xx
 
-```
+```Julia
 f(x,y)=cos.(x).*sin.(y);
 contour(x,y,f,fill=true)
 nqx=15
@@ -113,7 +113,7 @@ plot!(xlab="x", ylab="y")
 
 ### Plot $\cos{x}\sin{y}$ as a 2d contour plot and an interactive 3d plot
 
-```
+```Julia
 Here we switch from using gr() to using plotly. This is to demonstrate plotly's
  ability to make 3d interactive plots
 
@@ -126,7 +126,7 @@ This makes them extremely easy to add plots to a website using simple html code
 plotly();
 theme(:dark)
 ```
-```
+```Julia
 zz = cos.(xx).*sin.(yy);
 plot3d(xx,yy,zz, label=:none, st = :surface)
 plot!(xlab="x", ylab="y", zlab="cos(x)*sin(y)")
@@ -138,7 +138,7 @@ plot!(xlab="x", ylab="y", zlab="cos(x)*sin(y)")
 - Here we plot the zeta function (from the specialfunctions pacage)
  on the complex plane
  
-```
+```Julia
 x=range(-1, stop=2, length=100)
 y=range(-20, stop=20, length=100)
 xx = reshape([xi for xi in x for yj in y],  length(y), length(x));
@@ -151,7 +151,7 @@ yy = reshape([yj for xi in x for yj in y],  length(y), length(x));
 # and finally the aboslute value
 zz=abs.(zeta.(complex.(xx,yy)))
 ```
-```
+```Julia
 plot3d(xx,yy,zz,
     label=:none,
     st = :surface,
@@ -170,7 +170,7 @@ plot3d(xx,yy,zz,
 
 ![Vector Plot](pl3d2.png)
 
-```
+```Julia
 theme(:dao)
 plotly(size=(600,600));
 x=range(-1, stop=2, length=100)
